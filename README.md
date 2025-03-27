@@ -54,14 +54,14 @@ docker run -it --rm \
    cd mininet-docker
    ```
 
-2. Build the container:
+2. Build and start the container:
    ```bash
-   docker compose build
+   docker compose up -d
    ```
 
-3. Start the environment:
+3. Access the container:
    ```bash
-   docker compose run mininet
+   docker exec -it mininet bash
    ```
 
 ## Container Details
@@ -99,14 +99,17 @@ The entrypoint script:
 ### Container Management
 
 ```bash
-# Start container
-docker compose run mininet
+# Start container in background
+docker compose up -d
 
 # View logs
 docker compose logs
 
 # Access running container
 docker exec -it mininet bash
+
+# Stop container
+docker compose down
 ```
 
 ## Troubleshooting
