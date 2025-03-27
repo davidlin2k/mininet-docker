@@ -1,0 +1,13 @@
+services:
+  mininet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mininet
+    privileged: true
+    stdin_open: true
+    tty: true
+    network_mode: "host"
+    volumes:
+      - /lib/modules:/lib/modules
+      
